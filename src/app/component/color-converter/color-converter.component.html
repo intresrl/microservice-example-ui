@@ -1,0 +1,235 @@
+<form [formGroup]="colorConverterForm" class="container-fluid">
+  <div class="panel panel-default">
+    <div class="panel-heading bold">Convert RGB to HEX</div>
+    <div formGroupName="rgb2hex" class="panel-body row">
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Red</span>
+          <input formControlName="red" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Green</span>
+          <input formControlName="green" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Blue</span>
+          <input formControlName="blue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Hex</span>
+          <input formControlName="hex" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="convert-btn col-xs-12">
+        <button type="button" (click)="convertRgb2Hex()" class="btn btn-default">
+          <span class="bold">Convert</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading bold">Convert HEX to RGB</div>
+    <div formGroupName="hex2rgb" class="panel-body row">
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Red</span>
+          <input formControlName="red" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Green</span>
+          <input formControlName="green" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Blue</span>
+          <input formControlName="blue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Hex</span>
+          <input formControlName="hex" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="convert-btn col-xs-12">
+        <button type="button" (click)="convertHex2rgb()" class="btn btn-default">
+          <span class="bold">Convert</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading bold">Convert HSL to HEX</div>
+    <div formGroupName="hsl2hex" class="panel-body row">
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Hue</span>
+          <input formControlName="hue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Saturation</span>
+          <input formControlName="saturation" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Lightness</span>
+          <input formControlName="lightness" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Hex</span>
+          <input formControlName="hex" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="convert-btn col-xs-12">
+        <button type="button" (click)="convertHsl2hex()" class="btn btn-default">
+          <span class="bold">Convert</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading bold">Convert HEX to HSL</div>
+    <div formGroupName="hex2hsl" class="panel-body row">
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Hue</span>
+          <input formControlName="hue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Saturation</span>
+          <input formControlName="saturation" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Lightness</span>
+          <input formControlName="lightness" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="input-group">
+          <span class="input-group-addon">Hex</span>
+          <input formControlName="hex" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="convert-btn col-xs-12">
+        <button type="button" (click)="convertHex2hsl()" class="btn btn-default">
+          <span class="bold">Convert</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading bold">Convert RGB to HSL</div>
+    <div formGroupName="rgb2hsl" class="panel-body row">
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Red</span>
+          <input formControlName="red" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Green</span>
+          <input formControlName="green" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Blue</span>
+          <input formControlName="blue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Hue</span>
+          <input formControlName="hue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Saturation</span>
+          <input formControlName="saturation" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Lightness</span>
+          <input formControlName="lightness" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="convert-btn col-xs-12">
+        <button type="button" (click)="convertRgb2Hsl()" class="btn btn-default">
+          <span class="bold">Convert</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading bold">Convert HSL to RGB</div>
+    <div formGroupName="hsl2rgb" class="panel-body row">
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Red</span>
+          <input formControlName="red" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Green</span>
+          <input formControlName="green" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Blue</span>
+          <input formControlName="blue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Hue</span>
+          <input formControlName="hue" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Saturation</span>
+          <input formControlName="saturation" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <span class="input-group-addon">Lightness</span>
+          <input formControlName="lightness" type="number" class="form-control" aria-describedby="basic-addon3">
+        </div>
+      </div>
+      <div class="convert-btn col-xs-12">
+        <button type="button" (click)="convertHsl2Rgb()" class="btn btn-default">
+          <span class="bold">Convert</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

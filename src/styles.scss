@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+input.form-control.ng-dirty.ng-invalid {
+  background-color: firebrick;
+  color: lightgrey;
+}
