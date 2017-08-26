@@ -11,7 +11,7 @@ export class Hex {
     this._hex = obj.hasOwnProperty('hex') ? obj['hex'] : '';
   }
 
-  public toForm(): string {
-    return `{hex: ${this.hex}`;
+  public toForm(): Object {
+    return {hex: this.hex};
   }
 }

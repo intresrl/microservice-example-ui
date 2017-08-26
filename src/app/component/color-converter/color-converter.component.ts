@@ -26,9 +26,7 @@ export class ColorConverterComponent {
     const formGroup: FormGroup = this.colorConverterForm.get('rgb2hex') as FormGroup;
     if (formGroup.valid) {
       const rgb: Rgb = new Rgb(formGroup.getRawValue());
-      this.rgb2hexService.convertRgb2Hex(rgb).subscribe((hex: Hex) => {
-        formGroup.patchValue(hex);
-      });
+      this.rgb2hexService.convertRgb2Hex(rgb).subscribe((hex: Hex) => formGroup.patchValue(hex.toForm()));
     } else {
       alert('invalid');
     }
@@ -38,7 +36,7 @@ export class ColorConverterComponent {
     const formGroup: FormGroup = this.colorConverterForm.get('hex2rgb') as FormGroup;
     if (formGroup.valid) {
       const hex: Hex = new Hex(formGroup.getRawValue());
-      this.rgb2hexService.convertHex2Rgb(hex).subscribe((rgb: Rgb) => formGroup.patchValue(rgb));
+      this.rgb2hexService.convertHex2Rgb(hex).subscribe((rgb: Rgb) => formGroup.patchValue(rgb.toForm()));
     } else {
       alert('invalid');
     }
@@ -48,7 +46,7 @@ export class ColorConverterComponent {
     const formGroup: FormGroup = this.colorConverterForm.get('hsl2hex') as FormGroup;
     if (formGroup.valid) {
       const hsl: Hsl = new Hsl(formGroup.getRawValue());
-      this.hsl2hexService.convertHsl2Hex(hsl).subscribe((hex: Hex) => formGroup.patchValue(hex));
+      this.hsl2hexService.convertHsl2Hex(hsl).subscribe((hex: Hex) => formGroup.patchValue(hex.toForm()));
     } else {
       alert('invalid');
     }
@@ -58,7 +56,7 @@ export class ColorConverterComponent {
     const formGroup: FormGroup = this.colorConverterForm.get('hex2hsl') as FormGroup;
     if (formGroup.valid) {
       const hex: Hex = new Hex(formGroup.getRawValue());
-      this.hsl2hexService.convertHex2Hsl(hex).subscribe((hsl: Hsl) => formGroup.patchValue(hsl));
+      this.hsl2hexService.convertHex2Hsl(hex).subscribe((hsl: Hsl) => formGroup.patchValue(hsl.toForm()));
     } else {
       alert('invalid');
     }
@@ -68,9 +66,7 @@ export class ColorConverterComponent {
     const formGroup: FormGroup = this.colorConverterForm.get('rgb2hsl') as FormGroup;
     if (formGroup.valid) {
       const rgb: Rgb = new Rgb(formGroup.getRawValue());
-      this.rgb2hslService.convertRgb2Hsl(rgb).subscribe((hsl: Hsl) => {
-        formGroup.patchValue(hsl);
-      });
+      this.rgb2hslService.convertRgb2Hsl(rgb).subscribe((hsl: Hsl) => formGroup.patchValue(hsl.toForm()));
     } else {
       alert('invalid');
     }
@@ -80,9 +76,7 @@ export class ColorConverterComponent {
     const formGroup: FormGroup = this.colorConverterForm.get('hsl2rgb') as FormGroup;
     if (formGroup.valid) {
       const hsl: Hsl = new Hsl(formGroup.getRawValue());
-      this.rgb2hslService.convertHsl2Rgb(hsl).subscribe((rgb: Rgb) => {
-        formGroup.patchValue(rgb);
-      });
+      this.rgb2hslService.convertHsl2Rgb(hsl).subscribe((rgb: Rgb) => formGroup.patchValue(rgb.toForm()));
     } else {
       alert('invalid');
     }
