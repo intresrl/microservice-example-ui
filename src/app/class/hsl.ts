@@ -29,4 +29,8 @@ export class Hsl {
     this._saturation = obj.hasOwnProperty('saturation') ? obj['saturation'] : 0;
     this._lightness = obj.hasOwnProperty('lightness') ? obj['lightness'] : 0;
   }
+
+  public toForm(): string {
+    return `{hue: ${this.hue}, saturation: ${this.saturation}, lightness:${this.lightness}`;
+  }
 }

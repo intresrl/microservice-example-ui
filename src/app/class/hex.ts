@@ -10,4 +10,8 @@ export class Hex {
   constructor(obj: Object) {
     this._hex = obj.hasOwnProperty('hex') ? obj['hex'] : '';
   }
+
+  public toForm(): string {
+    return `{hex: ${this.hex}`;
+  }
 }

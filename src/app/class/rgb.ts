@@ -29,4 +29,8 @@ export class Rgb {
     this._green = obj.hasOwnProperty('green') ? obj['green'] : 0;
     this._blue = obj.hasOwnProperty('blue') ? obj['blue'] : 0;
   }
+
+  public toForm(): string {
+    return `{red: ${this.red}, green: ${this.green}, blue:${this.blue}`;
+  }
 }

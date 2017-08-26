@@ -103,9 +103,9 @@ export class ColorConverterComponent {
         hex: ['', Validators.compose([Validators.required, Validators.pattern(/^([a-f\d]){6}$/g)])]
       }),
       hsl2hex: this.fb.group({
-        hue: ['', Validators.compose([Validators.required, Validators.max(255), Validators.min(0)])],
-        saturation: ['', Validators.compose([Validators.required, Validators.max(255), Validators.min(0)])],
-        lightness: ['', Validators.compose([Validators.required, Validators.max(255), Validators.min(0)])],
+        hue: ['', Validators.compose([Validators.required, Validators.max(360), Validators.min(0)])],
+        saturation: ['', Validators.compose([Validators.required, Validators.max(100), Validators.min(0)])],
+        lightness: ['', Validators.compose([Validators.required, Validators.max(100), Validators.min(0)])],
         hex: {value: '', disabled: true}
       }),
       hex2hsl: this.fb.group({
@@ -126,9 +126,9 @@ export class ColorConverterComponent {
         red: {value: '', disabled: true},
         green: {value: '', disabled: true},
         blue: {value: '', disabled: true},
-        hue: ['', Validators.compose([Validators.required, Validators.max(255), Validators.min(0)])],
-        saturation: ['', Validators.compose([Validators.required, Validators.max(255), Validators.min(0)])],
-        lightness: ['', Validators.compose([Validators.required, Validators.max(255), Validators.min(0)])]
+        hue: ['', Validators.compose([Validators.required, Validators.max(360), Validators.min(0)])],
+        saturation: ['', Validators.compose([Validators.required, Validators.max(100), Validators.min(0)])],
+        lightness: ['', Validators.compose([Validators.required, Validators.max(100), Validators.min(0)])]
       })
     });
   }
