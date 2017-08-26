@@ -12,11 +12,11 @@ export class Hsl2hexService extends AbstractColorConverterHttpService {
 
   public convertHsl2Hex(hsl: Hsl): Observable<Hex> {
     return this.httpGet(this.prepareRequestOptions(hsl), 'hsl2hex')
-      .map((response: Response) => response.json() as Hex);
+      .map((response: Response) => new Hex(response.json()));
   }
 
   public convertHex2Hsl(hex: Hex): Observable<Hsl> {
     return this.httpGet(this.prepareRequestOptions(hex), 'hex2hsl')
-      .map((response: Response) => response.json() as Hsl);
+      .map((response: Response) => new Hsl(response.json()));
   }
 }
