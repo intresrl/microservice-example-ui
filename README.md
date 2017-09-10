@@ -1,4 +1,4 @@
-# AngularI3wayClient
+# Color Converter UI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
@@ -36,3 +36,9 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+___
+
+Copyright (C)  2017  Gianni Bombelli @ Intré S.r.l.
+
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. <https://creativecommons.org/licenses/by-sa/4.0/>
