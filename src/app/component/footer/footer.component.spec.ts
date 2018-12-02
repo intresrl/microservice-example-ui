@@ -75,11 +75,10 @@ describe('FooterComponent', () => {
 
   it('should render footer disclaimer in a p tag', async(() => {
     const currentYear = new Date().getFullYear();
-    const footerText = `\n` +
-      `    Powered by ${i3wayValues.company} ©${i3wayValues.yearOfFirstRelease}-${currentYear}.\n` +
-      `    Code licensed under an MIT-style License.\n` +
-      `    Documentation licensed under CC BY 4.0.\n` +
-      `    Version ${i3wayValues.version}.\n`;
+    const footerText = ` Powered by ${i3wayValues.company} ©${i3wayValues.yearOfFirstRelease}-${currentYear}. ` +
+      `Code licensed under GPL-3.0. ` +
+      `Documentation licensed under CC BY-SA 4.0. ` +
+      `Version ${i3wayValues.version}.`;
 
     fixture = TestBed.createComponent(FooterComponent);
     fixture.detectChanges();
