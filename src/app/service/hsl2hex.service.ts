@@ -17,10 +17,10 @@
  *
  */
 
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
 
 import { Hex } from '../class/hex';
 import { Hsl } from '../class/hsl';
@@ -30,12 +30,12 @@ import { AbstractColorConverterHttpService } from './abstract-color-converter-ht
 export class Hsl2hexService extends AbstractColorConverterHttpService {
 
   public convertHsl2Hex(hsl: Hsl): Observable<Hex> {
-    return this.httpGet(this.prepareRequestOptions(hsl), 'hsl2hex')
-      .map((response: Response) => new Hex(response.json()));
+    return this.httpGet(this.prepareRequestOptions(hsl), 'hsl2hex').pipe(
+      map((response: Response) => new Hex(response.json())));
   }
 
   public convertHex2Hsl(hex: Hex): Observable<Hsl> {
-    return this.httpGet(this.prepareRequestOptions(hex), 'hex2hsl')
-      .map((response: Response) => new Hsl(response.json()));
+    return this.httpGet(this.prepareRequestOptions(hex), 'hex2hsl').pipe(
+      map((response: Response) => new Hsl(response.json())));
   }
 }

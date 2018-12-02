@@ -17,9 +17,9 @@
  *
  */
 
+import { mergeMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/mergeMap';
+import { Observable } from 'rxjs';
 
 import { Rgb } from '../class/rgb';
 import { Hex } from '../class/hex';
@@ -34,12 +34,12 @@ export class Rgb2hslService {
   }
 
   public convertRgb2Hsl(rgb: Rgb): Observable<Hsl> {
-    return this.rgb2hexService.convertRgb2Hex(rgb)
-      .mergeMap((hex: Hex) => this.hsl2hexService.convertHex2Hsl(hex));
+    return this.rgb2hexService.convertRgb2Hex(rgb).pipe(
+      mergeMap((hex: Hex) => this.hsl2hexService.convertHex2Hsl(hex)));
   }
 
   public convertHsl2Rgb(hsl: Hsl): Observable<Rgb> {
-    return this.hsl2hexService.convertHsl2Hex(hsl)
-      .mergeMap((hex: Hex) => this.rgb2hexService.convertHex2Rgb(hex));
+    return this.hsl2hexService.convertHsl2Hex(hsl).pipe(
+      mergeMap((hex: Hex) => this.rgb2hexService.convertHex2Rgb(hex)));
   }
 }

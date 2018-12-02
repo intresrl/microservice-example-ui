@@ -17,10 +17,12 @@
  *
  */
 
+
+import { throwError as observableThrowError, Observable } from 'rxjs';
+
+import { catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, URLSearchParams } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
 
 import { BackendConfig } from '../constants';
 
@@ -41,7 +43,7 @@ export abstract class AbstractColorConverterHttpService {
 
   protected httpGet(requestOptions: RequestOptions, route: string): Observable<any> {
     return this.http
-      .get(`${this.backendConfig.url}/${route}`, requestOptions)
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+      .get(`${this.backendConfig.url}/${route}`, requestOptions).pipe(
+      catchError((error: any) => observableThrowError(error.json().error || 'Server error')));
   }
 }

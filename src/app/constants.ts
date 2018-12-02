@@ -17,7 +17,7 @@
  *
  */
 
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class I3way {
@@ -52,7 +52,7 @@ export class BackendConfig {
     return this._address;
   }
 
-  private _port = 80
+  private _port = 80;
   get port(): number {
     return this._port;
   }

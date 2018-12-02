@@ -17,10 +17,10 @@
  *
  */
 
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
 
 import { Hex } from '../class/hex';
 import { Rgb } from '../class/rgb';
@@ -30,12 +30,12 @@ import { AbstractColorConverterHttpService } from './abstract-color-converter-ht
 export class Rgb2hexService extends AbstractColorConverterHttpService {
 
   public convertRgb2Hex(rgb: Rgb): Observable<Hex> {
-    return this.httpGet(this.prepareRequestOptions(rgb), 'rgb2hex')
-      .map((response: Response) => new Hex(response.json()));
+    return this.httpGet(this.prepareRequestOptions(rgb), 'rgb2hex').pipe(
+      map((response: Response) => new Hex(response.json())));
   }
 
   public convertHex2Rgb(hex: Hex): Observable<Rgb> {
-    return this.httpGet(this.prepareRequestOptions(hex), 'hex2rgb')
-      .map((response: Response) => new Rgb(response.json()));
+    return this.httpGet(this.prepareRequestOptions(hex), 'hex2rgb').pipe(
+      map((response: Response) => new Rgb(response.json())));
   }
 }
