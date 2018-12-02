@@ -20,13 +20,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
-import { I3way } from '../../constants';
+import { ColorConverter } from '../../constants';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
 
-  const i3wayValues = {
+  const ColorConverterValues = {
     version: '0.1.0',
     company: 'in3',
     yearOfFirstRelease: '2016'
@@ -37,8 +37,8 @@ describe('FooterComponent', () => {
       declarations: [ FooterComponent ],
       providers: [
         {
-          provide: I3way,
-          useValue: i3wayValues
+          provide: ColorConverter,
+          useValue: ColorConverterValues
         }
       ]
     })
@@ -55,30 +55,30 @@ describe('FooterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as version '${i3wayValues.version}'`, async(() => {
+  it(`should have as version '${ColorConverterValues.version}'`, async(() => {
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.debugElement.componentInstance;
-    expect(component.i3way.version).toEqual(i3wayValues.version);
+    expect(component.colorConverter.version).toEqual(ColorConverterValues.version);
   }));
 
-  it(`should have as company '${i3wayValues.company}'`, async(() => {
+  it(`should have as company '${ColorConverterValues.company}'`, async(() => {
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.debugElement.componentInstance;
-    expect(component.i3way.company).toEqual(i3wayValues.company);
+    expect(component.colorConverter.company).toEqual(ColorConverterValues.company);
   }));
 
-  it(`should have as yearOfFirstRelease '${i3wayValues.yearOfFirstRelease}'`, async(() => {
+  it(`should have as yearOfFirstRelease '${ColorConverterValues.yearOfFirstRelease}'`, async(() => {
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.debugElement.componentInstance;
-    expect(component.i3way.yearOfFirstRelease).toEqual(i3wayValues.yearOfFirstRelease);
+    expect(component.colorConverter.yearOfFirstRelease).toEqual(ColorConverterValues.yearOfFirstRelease);
   }));
 
   it('should render footer disclaimer in a p tag', async(() => {
     const currentYear = new Date().getFullYear();
-    const footerText = ` Powered by ${i3wayValues.company} ©${i3wayValues.yearOfFirstRelease}-${currentYear}. ` +
+    const footerText = ` Powered by ${ColorConverterValues.company} ©${ColorConverterValues.yearOfFirstRelease}-${currentYear}. ` +
       `Code licensed under GPL-3.0. ` +
       `Documentation licensed under CC BY-SA 4.0. ` +
-      `Version ${i3wayValues.version}.`;
+      `Version ${ColorConverterValues.version}.`;
 
     fixture = TestBed.createComponent(FooterComponent);
     fixture.detectChanges();

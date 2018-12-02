@@ -18,7 +18,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { I3way } from '../../constants';
+import { ColorConverter } from '../../constants';
 
 @Component({
   selector: 'app-footer',
@@ -31,7 +31,7 @@ export class FooterComponent implements OnInit {
     return new Date();
   }
 
-  constructor(public i3way: I3way) {
+  constructor(public colorConverter: ColorConverter) {
   }
 
   ngOnInit() {

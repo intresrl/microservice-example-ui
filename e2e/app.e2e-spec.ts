@@ -17,13 +17,13 @@
  *
  */
 
-import { AngularI3wayClientPage } from './app.po';
+import { AngularColorConverterClientPage } from './app.po';
 
-describe('angular-i3way-client App', () => {
-  let page: AngularI3wayClientPage;
+describe('angular-color-converter-client App', () => {
+  let page: AngularColorConverterClientPage;
 
   beforeEach(() => {
-    page = new AngularI3wayClientPage();
+    page = new AngularColorConverterClientPage();
   });
 
   it('should display welcome message', () => {

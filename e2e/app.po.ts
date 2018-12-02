@@ -19,7 +19,7 @@
 
 import { browser, by, element } from 'protractor';
 
-export class AngularI3wayClientPage {
+export class AngularColorConverterClientPage {
   navigateTo() {
     return browser.get('/');
   }

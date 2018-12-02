@@ -28,7 +28,7 @@ import { ColorConverterComponent } from './component/color-converter/color-conve
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
-import { BackendConfig, I3way } from './constants';
+import { BackendConfig, ColorConverter } from './constants';
 import { Rgb2hexService } from './service/rgb2hex.service';
 import { Hsl2hexService } from './service/hsl2hex.service';
 import { Rgb2hslService } from './service/rgb2hsl.service';
@@ -50,7 +50,7 @@ import { Rgb2hslService } from './service/rgb2hsl.service';
   ],
   providers: [
     BackendConfig,
-    I3way,
+    ColorConverter,
     Hsl2hexService,
     Rgb2hexService,
     Rgb2hslService

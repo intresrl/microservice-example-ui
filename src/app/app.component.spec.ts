@@ -26,7 +26,7 @@ import { ColorConverterComponent } from './component/color-converter/color-conve
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
-import { I3way } from './constants';
+import { ColorConverter } from './constants';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
 import { Hsl2hexService } from './service/hsl2hex.service';
@@ -52,7 +52,7 @@ describe('AppComponent', () => {
           provide: APP_BASE_HREF,
           useValue : '/'
         },
-        I3way
+        ColorConverter
       ]
     }).compileComponents();
   }));

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-i3way-client": {
+    "angular-color-converter-client": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -52,18 +52,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-i3way-client:build"
+            "browserTarget": "angular-color-converter-client:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-i3way-client:build:production"
+              "browserTarget": "angular-color-converter-client:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-i3way-client:build"
+            "browserTarget": "angular-color-converter-client:build"
           }
         },
         "test": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "angular-i3way-client-e2e": {
+    "angular-color-converter-client-e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -110,7 +110,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-i3way-client:serve"
+            "devServerTarget": "angular-color-converter-client:serve"
           }
         },
         "lint": {
@@ -127,7 +127,7 @@
       }
     }
   },
-  "defaultProject": "angular-i3way-client",
+  "defaultProject": "angular-color-converter-client",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

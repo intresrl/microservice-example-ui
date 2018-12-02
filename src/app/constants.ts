@@ -20,7 +20,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class I3way {
+export class ColorConverter {
 
   private _version = '0.0.1';
   get version(): string {
